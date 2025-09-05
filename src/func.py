@@ -27,3 +27,53 @@ def func2(mylist):
 mylist = ["Bat", "Ball", "Cup"]
 func2(mylist)
 
+#Return values
+def add(a, b):
+    return a + b
+result = add(5, 3)
+print("The sum is:", result)
+
+#what if return is replaced with print
+def add(a, b):
+    print(a + b)
+result1 = add(5, 3)
+print("The sum is:", result1)
+
+def square(n):
+    return n * n
+result2 = square(4)+10
+print("The square is:", result2)
+
+def square(n):
+    print(n * n)
+#result3 = square(4)+10
+#print("The square is:", result3)
+
+#Recursion
+#normal function
+def sum(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i  
+    return total
+r = sum(5)
+print("The sum is:", r)
+
+#recursive function
+def sum(n):
+    if n == 1:         #base condition
+        return 1
+    return n + sum(n - 1)
+print(sum(5))
+
+
+#Modules
+import math
+print(math.sqrt(16))
+print(math.pi)
+
+import random
+print(random.randint(1, 100))
+
+from math import sqrt
+print(sqrt(25))
