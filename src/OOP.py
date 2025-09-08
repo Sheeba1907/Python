@@ -163,3 +163,32 @@ acct.deposit(400)
 acct.withdraw(100)
 print(acct.balance())
 #print(acct.__balance)
+
+#Abstraction
+from abc import ABC, abstractmethod
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    @abstractmethod
+    def perimeter(self):
+        pass
+class Rectangle(Shape):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    def area(self):
+        return self.length * self.breadth
+    def perimeter(self):
+        return 2 * (self.length + self.breadth)
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius * self.radius
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+Shape = [Rectangle(4, 5), Circle(3)]
+for i in Shape:
+    print("Area: ", i.area())
+    print("Perimeter: ", i.perimeter())
